@@ -1,0 +1,17 @@
+{# templates/user/motdepasse.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Réinitialisation du mot de passe{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center;">Réinitialisation du mot de passe</h1>
+    
+    {{ form_start(form, {'attr': {'class': 'form-style'}}) }}
+        {{ form_row(form.email) }}
+        
+        <div class="button-container">
+            <button type="submit" name="reset" value="reset" class="button-style">Réinitialiser le mot de passe</button>
+        </div>
+    {{ form_end(form) }}
+{% endblock %}

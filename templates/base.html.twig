@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Symfony Application{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+</head>
+<style>
+nav {
+    background-color: #333; /* Couleur de fond */
+    padding: 10px 0; /* Espacement interne */
+}
+
+nav ul {
+    list-style-type: none; /* Supprime les puces */
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centrer les liens */
+}
+
+nav ul li {
+    display: inline-block; /* Afficher les éléments en ligne */
+    margin-right: 20px; /* Espacement entre les éléments */
+}
+
+nav ul li a {
+    color: white; /* Couleur du texte */
+    text-decoration: none; /* Supprimer les soulignements */
+    padding: 10px 15px; /* Espacement interne des liens */
+    transition: background-color 0.3s; /* Transition fluide */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Couleur de fond au survol */
+}
+
+</style>
+<body>
+    {% include '_navbar.html.twig' %}
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
+    {% block javascripts %}{% endblock %}
+</body>
+</html>
