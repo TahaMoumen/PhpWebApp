@@ -1,0 +1,50 @@
+# Route for the homepage
+home:
+    path: /
+    controller: 'App\Controller\HomeController::index'
+
+# Route for event creation
+event_create:
+    path: /event/create
+    controller: 'App\Controller\EventController::create'
+
+# Route for event listing
+event_list:
+    path: /events
+    controller: 'App\Controller\EventController::list'
+
+# Route for registrations list
+registration_list:
+    path: /registrations
+    controller: 'App\Controller\RegistrationController::list'
+
+# Route for user profile
+user_profile:
+    path: /profile
+    controller: 'App\Controller\UserController::profile'
+
+forgot_password:
+    path: /forgot-password
+    controller: App\Controller\SecurityController::forgotPassword
+
+app_inscription:
+    path: /inscription
+    controller: 'App\Controller\RegistrationController::register'
+
+# Route for user login
+user_login:
+    path: /login
+    controller: 'App\Controller\SecurityController::login'
+
+app_login:
+    path: /login
+    controller: 'App\Controller\SecurityController::login'
+
+# Route for user logout
+user_logout:
+    path: /logout
+    controller: 'App\Controller\SecurityController::logout'
+
+event_new:
+    path: /event/new
+    controller: 'App\Controller\EventController::new'

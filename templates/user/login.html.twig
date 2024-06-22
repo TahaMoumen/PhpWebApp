@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+    <style>
+        /* Styles CSS existants */
+        .form-style {
+            width: 300px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+        }
+
+        .input-style {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .button-style {
+            width: 100%; /* Ajustez la largeur selon vos besoins */
+            padding: 10px;
+            background-color: #5C6BC0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button-style:hover {
+            background-color: #7986CB;
+        }
+    </style>
+
+    <div class="form-style">
+        <h1 style="text-align: center;">Connexion</h1>
+
+        {# Affichage des erreurs globales du formulaire #}
+        {{ form_start(form) }}
+            {{ form_row(form.email, {
+                'attr': {
+                    'placeholder': 'Email',
+                    'class': 'input-style'
+                }
+            }) }}
+            {{ form_row(form.password, {
+                'attr': {
+                    'placeholder': 'Mot de passe',
+                    'class': 'input-style'
+                }
+            }) }}
+
+            {# <div class="button-container">
+                <button type="submit" name="connect" value="connect" class="button-style">Se connecter</button>
+            </div> #}
+        {{ form_end(form) }}
+
+        <div class="button-container">
+            <button type="submit" name="connect" value="connect" class="button-style">Se connecter</button>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="{{ path('forgot_password') }}" class="button-style">Mot de passe oublié</a>
+        </div>
+
+    </div>
+{% endblock %}

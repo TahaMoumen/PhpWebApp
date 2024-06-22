@@ -1,0 +1,19 @@
+# config/services.yaml
+
+services:
+    # Configuration par défaut pour les services dans ce fichier
+    _defaults:
+        autowire: true      # Injection automatique des dépendances dans vos services.
+        autoconfigure: true # Enregistrement automatique de vos services en tant que commandes, abonnements d'événements, etc.
+
+    # Services spécifiques à l'application
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+
+    # Déclaration du service Symfony Security
+    Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface:
+        alias: security.password_encoder

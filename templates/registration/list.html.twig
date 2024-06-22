@@ -1,0 +1,14 @@
+{# {% extends 'base.html.twig' %} #}
+{# 
+{% block title %}Inscriptions{% endblock %}
+
+{% block body %}
+<h1>Vos Inscriptions</h1>
+<ul>
+    {% for registration in registrations %}
+        <li>{{ registration.event.title }}</li>
+    {% else %}
+        <li>Aucune inscription trouvée</li>
+    {% endfor %}
+</ul>
+{% endblock %} #}
